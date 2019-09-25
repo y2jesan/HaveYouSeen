@@ -8,3 +8,9 @@ export const logOut = () => {
         type: 'LOGOUT'
     };
 };
+export const setMostPopularPage = (pageNo) => {
+    return {
+        type: 'SET_PAGE_NAME',
+        payload: pageNo
+    };
+};

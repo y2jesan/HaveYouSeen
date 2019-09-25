@@ -1,9 +1,12 @@
 import isLoggedReducer from './isLogged';
-
-import { combineReducers } from 'redux';
+import mostPopularPageReducer from './mostPopularPage'
+import {
+	combineReducers
+} from 'redux';
 
 const allReducers = combineReducers({
-	isLogged: isLoggedReducer
+	isLogged: isLoggedReducer,
+	mostPopularPage: mostPopularPageReducer
 });
 
 export default allReducers;

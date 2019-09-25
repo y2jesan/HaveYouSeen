@@ -8,6 +8,8 @@ import Home from './components/Home';
 import MostPopular from './components/MostPopular';
 import UserProfile from './components/UserProfile';
 import SeriesDetails from './components/SeriesDetails';
+import { MostPopularProvider } from './contexts/MostPopularContext';
+
 //TODO Web Template Studio: Add routes for your new pages here.
 class App extends Component {
 	render() {
@@ -17,7 +19,9 @@ class App extends Component {
 				<Switch>
 					<Redirect exact path="/" to="/Home" />
 					<Route path="/Home" component={Home} />
-					<Route path="/MostPopular" component={MostPopular} />
+					<MostPopularProvider>
+						<Route path="/MostPopular" component={MostPopular} />
+					</MostPopularProvider>
 					<Route path="/UserProfile" component={UserProfile} />
 					<Route path="/SeriesDetails" component={SeriesDetails} />
 				</Switch>
