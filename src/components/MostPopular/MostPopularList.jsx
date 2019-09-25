@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { MostPopularContext } from '../../contexts/MostPopularContext';
 import GridComponent from './GridComponent';
 
@@ -14,7 +14,7 @@ export default function MostPopularList() {
 						key={series.id}
 						header={series.name}
 						// description={textAssets.shortDescription}
-						// image={GreyBox}
+						image={series.image_thumbnail_path}
 					/>
 				))}
 			</div>

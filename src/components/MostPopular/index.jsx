@@ -1,9 +1,7 @@
 ﻿import React, { Component } from 'react';
 import classnames from 'classnames';
-import GridComponent from './GridComponent';
 import MostPopularList from './MostPopularList';
 import WarningMessage from '../WarningMessage';
-import GreyBox from '../../images/GreyBox.svg';
 import styles from './grid.module.css';
 import CONSTANTS from '../../constants';
 
@@ -51,19 +49,6 @@ export default class MostPopular extends Component {
 				<div className={classnames('text-center', styles.header)}>
 					<h1>Most Popular Series</h1>
 				</div>
-
-				{/* <div className="container">
-					<div className="row justify-content-around text-center pb-5">
-						{gridTextAssets.map((textAssets) => (
-							<GridComponent
-								key={textAssets.id}
-								header={textAssets.title}
-								description={textAssets.shortDescription}
-								image={GreyBox}
-							/>
-						))}
-					</div>
-        </div> */}
 				<MostPopularList />
 				<WarningMessage
 					open={WarningMessageOpen}
