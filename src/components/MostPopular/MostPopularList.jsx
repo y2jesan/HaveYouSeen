@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { MostPopularContext } from '../../contexts/MostPopularContext';
 import GridComponent from './GridComponent';
 
-export default function MostPopularList() {
+const MostPopularList = () => {
 	// const { image, header, description } = props;
 	const seriesList = useContext(MostPopularContext);
 	console.log(seriesList);
@@ -10,14 +10,10 @@ export default function MostPopularList() {
 		<div className="container">
 			<div className="row justify-content-around text-center pb-5">
 				{seriesList.map((series) => (
-					<GridComponent
-						key={series.id}
-						header={series.name}
-						// description={textAssets.shortDescription}
-						image={series.image_thumbnail_path}
-					/>
+					<GridComponent key={series.id} header={series.name} image={series.image_thumbnail_path} />
 				))}
 			</div>
 		</div>
 	);
-}
+};
+export default MostPopularList;

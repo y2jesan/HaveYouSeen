@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react';
+﻿import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
@@ -11,24 +11,22 @@ import SeriesDetails from './components/SeriesDetails';
 import { MostPopularProvider } from './contexts/MostPopularContext';
 
 //TODO Web Template Studio: Add routes for your new pages here.
-class App extends Component {
-	render() {
-		return (
-			<React.Fragment>
-				<NavBar />
-				<Switch>
-					<Redirect exact path="/" to="/Home" />
-					<Route path="/Home" component={Home} />
-					<MostPopularProvider>
-						<Route path="/MostPopular" component={MostPopular} />
-					</MostPopularProvider>
-					<Route path="/UserProfile" component={UserProfile} />
-					<Route path="/SeriesDetails" component={SeriesDetails} />
-				</Switch>
-				<Footer />
-			</React.Fragment>
-		);
-	}
-}
+const App = () => {
+	return (
+		<React.Fragment>
+			<NavBar />
+			<Switch>
+				<Redirect exact path="/" to="/Home" />
+				<Route path="/Home" component={Home} />
+				<MostPopularProvider>
+					<Route path="/MostPopular" component={MostPopular} />
+				</MostPopularProvider>
+				<Route path="/UserProfile" component={UserProfile} />
+				<Route path="/SeriesDetails" component={SeriesDetails} />
+			</Switch>
+			<Footer />
+		</React.Fragment>
+	);
+};
 
 export default App;

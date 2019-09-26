@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 //TODO Web Template Studio: Add a new link in the NavBar for your page here.
 // A skip link is included as an accessibility best practice. For more information visit https://www.w3.org/WAI/WCAG21/Techniques/general/G1.
-export default function NavBar() {
+const NavBar = () => {
 	const isLogged = useSelector((state) => state.isLogged);
 	return (
 		<React.Fragment>
@@ -36,4 +36,5 @@ export default function NavBar() {
 			</nav>
 		</React.Fragment>
 	);
-}
+};
+export default NavBar;
