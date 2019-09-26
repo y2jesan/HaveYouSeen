@@ -16,13 +16,13 @@ const App = () => {
 		<React.Fragment>
 			<NavBar />
 			<Switch>
-				<Redirect exact path="/" to="/Home" />
-				<Route path="/Home" component={Home} />
+				<Redirect path="/" exact to="/Home" />
+				<Route path="/Home" exact component={Home} />
 				<MostPopularProvider>
-					<Route path="/MostPopular" component={MostPopular} />
+					<Route path="/MostPopular" exact component={MostPopular} />
+					<Route path="/UserProfile/:id" exact component={UserProfile} />
+					<Route path="/SeriesDetails/:id" exact component={SeriesDetails} />
 				</MostPopularProvider>
-				<Route path="/UserProfile" component={UserProfile} />
-				<Route path="/SeriesDetails" component={SeriesDetails} />
 			</Switch>
 			<Footer />
 		</React.Fragment>

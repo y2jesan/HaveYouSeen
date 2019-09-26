@@ -10,7 +10,12 @@ const MostPopularList = () => {
 		<div className="container">
 			<div className="row justify-content-around text-center pb-5">
 				{seriesList.map((series) => (
-					<GridComponent key={series.id} header={series.name} image={series.image_thumbnail_path} />
+					<GridComponent
+						key={series.id}
+						seriesId={series.id}
+						header={series.name}
+						image={series.image_thumbnail_path}
+					/>
 				))}
 			</div>
 		</div>
