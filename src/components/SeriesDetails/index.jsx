@@ -1,30 +1,43 @@
 ﻿import React, { useState, useEffect } from 'react';
-import MasterDetailPage from './MasterDetailPage';
 
 const SeriesDetails = (props) => {
 	const { seriesId } = props.match.params.id;
-	console.log(props.match.params.id);
+	const [ isLoaded, setIsLoaded ] = useState(false);
+	const [ currentSeriesId, setCurrentSeriesId ] = useState(0);
 	const [ seriesDetails, setSeriesDetails ] = useState([]);
 	useEffect(
 		() => {
-			const seriesId = props.match.params.id;
-			fetchSeriesDetails(seriesId);
+			const newSeriesId = props.match.params.id;
+			setCurrentSeriesId(newSeriesId);
+			fetchSeriesDetails(newSeriesId);
+			setIsLoadedData();
 		},
 		[ seriesId ]
 	);
-	const fetchSeriesDetails = async (seriesId) => {
-		//console.log(`seriesId:${seriesId}`);
-		const getSeriesDetailsUrl = `https://www.episodate.com/api/show-details?q=${seriesId}`;
-		//console.log(getSeriesDetailsUrl);
+	const fetchSeriesDetails = async (id) => {
+		const getSeriesDetailsUrl = `https://www.episodate.com/api/show-details?q=${id}`;
 		const response = await fetch(getSeriesDetailsUrl);
 		const data = await response.json();
 		setSeriesDetails(data);
+		console.log(data);
+	};
+	const setIsLoadedData = () => {
+		const currentSeriesList = seriesDetails;
+		if (currentSeriesList !== undefined && currentSeriesList.length > 0) {
+			setIsLoaded(true);
+			console.log(isLoaded);
+		}
 	};
 	return (
 		<main id="mainContent">
 			<div className="container-fluid">
 				<div className="row">
-					<MasterDetailPage seriesId={seriesId} seriesDetails={seriesDetails.tvShow} />
+					{/* <MasterDetailPage seriesId={currentSeriesId} seriesDetails={seriesDetails.tvShow} /> */}
+					<div className="col-md-8 col-12 ml-3 mb-5">
+						{/* <p className={styles.title}>Status</p> */}
+						<p> Name: {isLoaded ? seriesDetails.name : '1st'}</p>
+						<p>{JSON.stringify(seriesDetails)}</p>
+					</div>
 				</div>
 			</div>
 		</main>
