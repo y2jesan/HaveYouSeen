@@ -1,6 +1,6 @@
 ﻿{
   "short_name": "HaveYouSeen",
-  "name": "HaveYouSeen created with Microsoft Web Template Studio",
+  "name": "HaveYouSeen",
   "icons": [{
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
@@ -9,15 +9,15 @@
     {
       "src": "android-512x512.png",
       "sizes": "512x512",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
       "src": "apple-192x192.png",
       "sizes": "192x192",
-      "type": "image/x-icon"
+      "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
