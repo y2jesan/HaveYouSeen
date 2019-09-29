@@ -17,18 +17,18 @@ const NavBar = () => {
 					HaveYouSeen
 				</Link>
 				<div className="navbar-nav">
-					<Link className="nav-item nav-link active" to="Home">
+					<Link className="nav-item nav-link active" to="/Home">
 						Home
 					</Link>
-					<Link className="nav-item nav-link active" to="MostPopular">
+					<Link className="nav-item nav-link active" to="/MostPopular">
 						MostPopular
 					</Link>
 					{isLogged ? (
-						<Link className="nav-item nav-link active" to="UserProfile">
+						<Link className="nav-item nav-link active" to="/UserProfile">
 							UserProfile
 						</Link>
 					) : (
-						<Link className="nav-item nav-link active" to="UserProfile">
+						<Link className="nav-item nav-link active" to="/UserProfile">
 							Log In
 						</Link>
 					)}

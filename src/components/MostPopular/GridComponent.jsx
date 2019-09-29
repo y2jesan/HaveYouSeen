@@ -7,7 +7,7 @@ const GridComponent = (props) => {
 		<div className="col-md-4 col-sm-12 p-5">
 			<img src={image} width="180" height="250" alt="Default Grey Box" className="mb-3" />
 			<h3>
-				<Link to={`/SeriesDetails/${seriesId}`}>{header}</Link>
+				<Link to={`SeriesDetails/${seriesId}`}>{header}</Link>
 			</h3>
 		</div>
 	);
